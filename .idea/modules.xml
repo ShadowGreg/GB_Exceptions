@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/GB_Exceptions.iml" filepath="$PROJECT_DIR$/.idea/GB_Exceptions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson002/Lesson002.iml" filepath="$PROJECT_DIR$/Lesson002/Lesson002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson001/Seminar/Task001/Task001.iml" filepath="$PROJECT_DIR$/Lesson001/Seminar/Task001/Task001.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson001/Homework/Task001/Task0011.iml" filepath="$PROJECT_DIR$/Lesson001/Homework/Task001/Task0011.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson001/Homework/Task002/Task002.iml" filepath="$PROJECT_DIR$/Lesson001/Homework/Task002/Task002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson001/Homework/Task003/Task003.iml" filepath="$PROJECT_DIR$/Lesson001/Homework/Task003/Task003.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson001/Homework/Task004/Task004.iml" filepath="$PROJECT_DIR$/Lesson001/Homework/Task004/Task004.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson001/Seminar/Task001/task002/task002.iml" filepath="$PROJECT_DIR$/Lesson001/Seminar/Task001/task002/task002.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson001/Seminar/Task001/task003/task003.iml" filepath="$PROJECT_DIR$/Lesson001/Seminar/Task001/task003/task003.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson001/Seminar/Task001/task004/task004.iml" filepath="$PROJECT_DIR$/Lesson001/Seminar/Task001/task004/task004.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson001/Seminar/Task001/task005/task005.iml" filepath="$PROJECT_DIR$/Lesson001/Seminar/Task001/task005/task005.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lesson001/Seminar/Task001/task006/task006.iml" filepath="$PROJECT_DIR$/Lesson001/Seminar/Task001/task006/task006.iml" />
+    </modules>
+  </component>
+</project>
