@@ -1,5 +1,14 @@
-public class ArrayUtils {
-    public static Integer[] calculateQuotient(Integer[] array1, Integer[] array2) {
+import java.util.Arrays;
+
+public class ArrayUtils implements Command {
+    private Integer[] array1, array2;
+
+    public ArrayUtils(Integer[] array1, Integer[] array2){
+        this.array1 = array1;
+        this.array2 = array2;
+    }
+
+    private Integer[] calculateQuotient(Integer[] array1, Integer[] array2) {
         if (array1.length != array2.length) {
             throw new RuntimeException("Длины массивов не равны");
         }
@@ -18,4 +27,12 @@ public class ArrayUtils {
         return result;
     }
 
+    @Override
+    public void Execute() {
+        try {
+            System.out.println(Arrays.toString(calculateQuotient(array1, array2)));
+        } catch (RuntimeException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
+    }
 }

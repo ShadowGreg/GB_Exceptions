@@ -7,15 +7,25 @@ import java.util.Arrays;
 // которое пользователь может увидеть - RuntimeException, т.е. ваше.
 public class Main {
     public static void main(String[] args) {
+        Integer[] array1 = {1, 2, 3};
+        Integer[] array2 = {4, 5, 6};
+        ArrayUtils arrayUtils = new ArrayUtils(array1, array2);
+        arrayUtils.Execute();
 
-        int[] array1 = {1, 2, 3};
-        int[] array2 = {4, 5, 6};
+        array1 = new Integer[]{1, 2, 3, 5};
+        array2 = new Integer[]{4, 5, 6, 0};
+        arrayUtils = new ArrayUtils(array1, array2);
+        arrayUtils.Execute();
 
-        try {
-            int[] result = calculateQuotient(array1, array2);
-            System.out.println(Arrays.toString(result));
-        } catch (RuntimeException e) {
-            System.out.println("Ошибка: " + e.getMessage());
-        }
+        array1 = new Integer[]{1, 2, 3, 5};
+        array2 = new Integer[]{4, null, 6, 0};
+        arrayUtils = new ArrayUtils(array1, array2);
+        arrayUtils.Execute();
+
+
+        array1 = new Integer[]{1, 2, 3, 5};
+        array2 = new Integer[]{4, 6, 0};
+        arrayUtils = new ArrayUtils(array1, array2);
+        arrayUtils.Execute();
     }
 }
