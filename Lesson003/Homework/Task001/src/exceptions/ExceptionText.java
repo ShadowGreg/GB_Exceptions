@@ -1,4 +1,4 @@
-package Exceptions;
+package exceptions;
 
 public class ExceptionText {
     private static final String constForName = "тест должен состоять из букв, ";

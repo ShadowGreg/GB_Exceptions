@@ -1,9 +1,9 @@
-package Controller;
+package controllers;
 
-import Exceptions.AppException;
-import Exceptions.ExceptionText;
-import View.View;
-import View.PromptText;
+import exceptions.AppException;
+import exceptions.ExceptionText;
+import view.View;
+import view.PromptText;
 import core.PersonFillController;
 
 import java.util.Objects;

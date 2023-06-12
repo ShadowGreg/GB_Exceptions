@@ -1,4 +1,4 @@
-package View;
+package view;
 
 public class PromptText {
     public static String  defaultMsg = "(Для выхода наберите EXIT) Введите  >_";

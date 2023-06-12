@@ -1,7 +1,7 @@
-package Controller;
+package controllers;
 
-import Exceptions.AppException;
-import Exceptions.ExceptionText;
+import exceptions.AppException;
+import exceptions.ExceptionText;
 import core.Person;
 
 import java.io.FileWriter;
