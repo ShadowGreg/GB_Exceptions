@@ -6,7 +6,7 @@ public class Person {
     protected String patronymic;
     protected String lastName;
     protected String birthDate;
-    protected int phoneNumber;
+    protected long phoneNumber;
     protected Gender gender;
 
     protected enum Gender {
@@ -31,7 +31,7 @@ public class Person {
                 Gender.male);
     }
 
-    public Person(String name, String patronymic, String lastNme, String birthDate, int phoneNumber, Gender gender) {
+    public Person(String name, String patronymic, String lastNme, String birthDate, long phoneNumber, Gender gender) {
         this.name = name;
         this.patronymic = patronymic;
         this.lastName = lastNme;

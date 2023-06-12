@@ -8,5 +8,7 @@ public class PromptText {
             "(например dd.mm.yyyy) >_";
     public static String  phoneNumberMsg = "Введите номер телефона целым числом\n" +
             "(например 89161443710) >_";
+    public static String  genderMsg = "Введите пол\n" +
+            "(формат записи f- женский, m - мужской) >_";
 
 }

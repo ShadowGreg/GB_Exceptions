@@ -22,39 +22,34 @@ public class AppController {
         while (!Objects.equals(input, "EXIT")) {
             try {
                 //input = view.enterText(PromptText.fullNameMsg);
-                input ="Иванов Иван Иванович";
+                input = "Иванов Иван Иванович";
                 setFullName(input);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-                throw new AppException(e.getMessage());
-            }
-            try {
-                input = view.enterText(PromptText.dateMsg);
+
+//                input = view.enterText(PromptText.dateMsg);
+                input = "12.03.2011";
                 entry.setBirthDate(input);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-                throw new AppException(e.getMessage());
-            }
-            try {
-                input = view.enterText(PromptText.phoneNumberMsg);
+
+//                input = view.enterText(PromptText.phoneNumberMsg);
+                input ="89061747712";
                 entry.setPhoneNumber(input);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-                throw new AppException(e.getMessage());
-            }
-            try {
-                input = view.enterText(PromptText.phoneNumberMsg);
+
+//                input = view.enterText(PromptText.genderMsg);
+                input = "fem";
                 entry.setGender(input);
+
+                try (PersonWriter person = new PersonWriter(entry.getEntry())) {
+                    person.writePersonToFile();
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                    throw new AppException(e.getMessage());
+                }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
-                throw new AppException(e.getMessage());
+            } finally {
+                System.gc();
             }
-            try(PersonWriter person = new PersonWriter(entry.getEntry())) {
-                person.writePersonToFile();
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
-                throw new AppException(e.getMessage());
-            }
+
+
         }
     }
 
@@ -67,7 +62,7 @@ public class AppController {
     }
 
     private boolean verifyWordsCount(String[] splitInput) throws AppException {
-        if (splitInput.length==3){
+        if (splitInput.length == 3) {
             return true;
         }
         throw new AppException(ExceptionText.wordsCountName);

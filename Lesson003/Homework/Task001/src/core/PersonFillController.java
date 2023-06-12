@@ -6,6 +6,9 @@ import Exceptions.ExceptionText;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -27,7 +30,14 @@ public class PersonFillController {
     }
 
     public void setGender(String input) throws AppException {
-        compareWithEnum(input);
+        Map<String, Person.Gender> gender = new HashMap<>();
+        gender.put("f", Person.Gender.female);
+        gender.put("m", Person.Gender.male);
+        try {
+            compareWithEnum(String.valueOf(gender.get(input)));
+        } catch (IllegalArgumentException e){
+            throw new AppException(ExceptionText.wrongGender);
+        }
     }
 
     private void compareWithEnum(String text) throws AppException {
@@ -111,9 +121,8 @@ public class PersonFillController {
 
     public void setPhoneNumber(String number) throws AppException {
         if (isValidNumber(number)) {
-            person.phoneNumber = Integer.parseInt(number);
+            person.phoneNumber = Long.parseLong(number);
         }
-        isValidNumber(number);
     }
 
 }
