@@ -6,5 +6,7 @@ public class PromptText {
             "(например Иванов Иван Иванович) >_";
     public static String  dateMsg = "Введите дату рождения \n" +
             "(например dd.mm.yyyy) >_";
+    public static String  phoneNumberMsg = "Введите номер телефона целым числом\n" +
+            "(например 89161443710) >_";
 
 }
