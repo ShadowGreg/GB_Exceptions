@@ -6,7 +6,6 @@ import Exceptions.ExceptionText;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -42,8 +41,7 @@ public class PersonFillController {
 
     private void compareWithEnum(String text) throws AppException {
         try {
-            Person.Gender myEnum = Person.Gender.valueOf(text);
-            person.gender = myEnum;
+            person.gender = Person.Gender.valueOf(text);
         } catch (IllegalArgumentException e) {
             throw new AppException(ExceptionText.wrongGender);
         }
@@ -59,7 +57,7 @@ public class PersonFillController {
         return !matcher.find();
     }
 
-    private boolean fillEntryFromFullName(String nameText, String exceptionText, EntryFromFullName inNamePart) throws AppException {
+    private void fillEntryFromFullName(String nameText, String exceptionText, EntryFromFullName inNamePart) throws AppException {
 
         if (VerifyEntryFromFullName(nameText)) {
             switch (inNamePart) {
@@ -68,7 +66,7 @@ public class PersonFillController {
                 case PATRONYMIC -> person.patronymic = nameText;
             }
 
-            return true;
+            return;
         }
         throw new AppException(exceptionText);
 

@@ -8,7 +8,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class PersonWriter  implements AutoCloseable{
-    //    public static void writePersonToFile(String lastName, String firstName, String patronymic, String birthDate, int phoneNumber, String gender) {
     private static Person person;
 
     public PersonWriter(Person inPerson) {
@@ -27,7 +26,7 @@ public class PersonWriter  implements AutoCloseable{
     }
 
     @Override
-    public void close() throws Exception {
+    public void close() {
         System.gc();
     }
 }

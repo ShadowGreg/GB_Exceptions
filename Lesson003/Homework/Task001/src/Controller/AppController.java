@@ -17,24 +17,20 @@ public class AppController {
         entry = new PersonFillController();
     }
 
-    public void run() throws AppException {
+    public void run() {
         String input = "";
         while (!Objects.equals(input, "EXIT")) {
             try {
-                //input = view.enterText(PromptText.fullNameMsg);
-                input = "Иванов Иван Иванович";
+                input = view.enterText(PromptText.fullNameMsg);
                 setFullName(input);
 
-//                input = view.enterText(PromptText.dateMsg);
-                input = "12.03.2011";
+                input = view.enterText(PromptText.dateMsg);
                 entry.setBirthDate(input);
 
-//                input = view.enterText(PromptText.phoneNumberMsg);
-                input ="89061747712";
+                input = view.enterText(PromptText.phoneNumberMsg);
                 entry.setPhoneNumber(input);
 
-//                input = view.enterText(PromptText.genderMsg);
-                input = "fem";
+                input = view.enterText(PromptText.genderMsg);
                 entry.setGender(input);
 
                 try (PersonWriter person = new PersonWriter(entry.getEntry())) {
@@ -61,9 +57,9 @@ public class AppController {
         entry.setLastName(splitInput[1]);
     }
 
-    private boolean verifyWordsCount(String[] splitInput) throws AppException {
+    private void verifyWordsCount(String[] splitInput) throws AppException {
         if (splitInput.length == 3) {
-            return true;
+            return;
         }
         throw new AppException(ExceptionText.wordsCountName);
     }
