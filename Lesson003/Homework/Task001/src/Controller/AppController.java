@@ -1,6 +1,7 @@
 package Controller;
 
 import Exceptions.AppException;
+import Exceptions.ExceptionText;
 import View.View;
 import View.PromptText;
 import core.EntryFillController;
@@ -25,8 +26,6 @@ public class AppController {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 throw new AppException(e.getMessage());
-            }finally {
-                input = "";
             }
             try {
                 input = view.enterText(PromptText.fullNameMsg);
@@ -34,18 +33,23 @@ public class AppController {
             } catch (Exception e) {
                 System.out.println(e.getMessage());
                 throw new AppException(e.getMessage());
-            }finally {
-                input = "";
             }
         }
     }
 
     private void SetFullName(String msg) throws AppException {
         String[] splitInput = msg.split(" ");
-
+        Verify(splitInput);
         entry.setNme(splitInput[0]);
         entry.setPatronymic(splitInput[1]);
         entry.setLastName(splitInput[1]);
+    }
+
+    private boolean Verify(String[] splitInput) throws AppException {
+        if (splitInput.length==3){
+            return true;
+        }
+        throw new AppException(ExceptionText.wordsCountName);
     }
 
 }
